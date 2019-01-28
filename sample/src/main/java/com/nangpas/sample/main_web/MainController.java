@@ -12,8 +12,6 @@ public class MainController {
 	
 	@RequestMapping("/main")
 	public String test(Model model) {
-
-		
 		
 		model.addAttribute("name", "test");
 		return "test";
