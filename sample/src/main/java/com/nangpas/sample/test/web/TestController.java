@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
 	private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 	
+	//이재원 커밋
 	@RequestMapping("/test")
 	public String test(Model model) {
 		logger.debug("logger test debug");
