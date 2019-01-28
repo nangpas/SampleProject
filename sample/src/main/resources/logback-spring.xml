@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	
+	<property name="LOG_HOME" value="C:/starter/logs" />
+	<property name="LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}][%p]: %c - %m%n" />
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/sample.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sample_%d{yyyyMMdd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Appenders -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${LOG_PATTERN}</pattern>
+		</layout>
+	</appender>
+	
+	<!-- Application Loggers -->
+	<logger name="com.nangpas" level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</logger>
+	
+	<!-- Root Logger -->
+	<!--  
+	<root level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+	</root>
+	-->
+</configuration>
