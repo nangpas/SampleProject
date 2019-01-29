@@ -14,6 +14,6 @@ public class MainController {
 	public String test(Model model) {
 		
 		model.addAttribute("name", "test");
-		return "test";
+		return "/main/loginView";
 	}
 }
